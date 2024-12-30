@@ -270,3 +270,25 @@ public class MinimalInterpreter2 {
         interpreter2.eval(python_);
     }
 }
+        public void eval_8(String python_8) {
+                String[] lines = python_8.split("\n"); // Split by lines
+
+                for (int i = 0; i < lines.length; i++) {
+                    String line = lines[i].trim();
+                    if (line.isEmpty()) continue;
+
+        
+
+                    // Handle variable assignment and also check if it is not a logical not operation != and == too
+                    if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                        handleAssignment(line);
+                    } else if (line.startsWith("print")) {
+                        handlePrint(line); // this is for frinting when the line strarts with it
+                    } else if (line.contains("while")) {
+                        i = handleWhileLoop(lines, i);
+                    } else if(line.contains("if")){
+                        i = handleIfElse(lines,i);
+                    }
+
+                }
+            }
