@@ -36,7 +36,7 @@ public class MinimalInterpreter2 {
     private void handleAssignment(String line) {
         String[] parts = line.split("="); // there line splits variable assignment by = operator into variables
         String varName = parts[0].trim(); // this helps getting variable name by the first component of parts
-        String expression = parts[1].trim(); 
+        String expression = parts[1].trim();
 
         if ((expression.startsWith("'") && expression.endsWith("'")) || (expression.startsWith("\"") && expression.endsWith("\""))) { // while reading string with whitespace  it will just print it without it
             String value = expression.replaceAll("'","").replaceAll("\"", "");
@@ -45,21 +45,21 @@ public class MinimalInterpreter2 {
         }
 
         if (expression.equals("True")) { //bollean true line variant
-            booleans.put(varName, true); 
+            booleans.put(varName, true);
             return;
         }
 
         if (expression.equals("False")) { // bollean false variant
-            booleans.put(varName, false); 
+            booleans.put(varName, false);
             return;
         }
 
-        double value = evaluateExpression(expression); 
+        double value = evaluateExpression(expression);
         numbervars.put(varName, value);
 
     }
 
-    // this is for numbers 
+    // this is for numbers
     private double evaluateExpression(String expression) {
         String[] operands = expression.split("[+\\-*/%]"); // this splits expression using operators
         double result = 0;
@@ -77,9 +77,9 @@ public class MinimalInterpreter2 {
         // there we  try to iterate through the expression and apply operators
         int operatorIndex = 0;
         for (int i = 1; i < operands.length; i++) {
-            double nextOperand = 0;  
-            
-            char operator = expression.charAt(expression.indexOf(operands[i-1]) + operands[i-1].length()); // 
+            double nextOperand = 0;
+
+            char operator = expression.charAt(expression.indexOf(operands[i-1]) + operands[i-1].length()); //
 
             try {
                 nextOperand = Double.parseDouble(operands[i].trim());
@@ -112,7 +112,7 @@ public class MinimalInterpreter2 {
                 builder.append(s.replaceAll("'", "").trim());
             } else if (stringss.containsKey(s.trim())){ // if  there is a variable in stringss that has a value then append its value to a builder so you cn print that value
                 builder.append(stringss.get(s.trim()));
-            } else if (s.trim().equals("'")){ 
+            } else if (s.trim().equals("'")){
                 builder.append(" ");
             } else {
                 builder.append(numbervars.get(s.trim()));
@@ -164,7 +164,7 @@ public class MinimalInterpreter2 {
             eval(String.join("\n", Arrays.copyOfRange(lines, i + 1, j)));
         }
 
-        return j - 1; 
+        return j - 1;
     }
 
     private boolean evalBool(String expression) {
@@ -223,19 +223,19 @@ public class MinimalInterpreter2 {
         String[] stringParts = expression.split("[+\\-,]");
         for (String s : stringParts){ // splits the expression into parts based on operators , to iterate through every part.
             if (stringss.containsKey(s.trim())) return true;
-        } 
+        }
         return false;
     }
 
     // then if no stringss is found returns false, if it is found  returns true.
-    // this mehtod handles "print" command 
+    // this mehtod handles "print" command
     private void handlePrint(String line) {
         String varName = line.substring(line.indexOf('(') + 1, line.indexOf(')')).trim();
 
         // Handles String
         if ((varName.startsWith("'") && varName.endsWith("'")) || (varName.startsWith("\"") && varName.endsWith("\""))) {
             // It's a string , print it as is
-            System.out.println(varName.substring(1, varName.length() - 1));  
+            System.out.println(varName.substring(1, varName.length() - 1));
             return;
         }
 
@@ -252,7 +252,7 @@ public class MinimalInterpreter2 {
         }
         if ((varName.contains("+") || varName.contains(",")) && containsStringss(varName)) {
             System.out.println(evalString(varName));
-            return; 
+            return;
         }
         String toPrint = String.valueOf(evaluateExpression(varName)); // numeric expressions
        //print the result
@@ -262,7 +262,7 @@ public class MinimalInterpreter2 {
 
     public static void main(String[] args) {
         String python_ = """
-                // algorithm like fibonachi in python 
+                // algorithm like fibonachi in python
                 """;
                 //we will write a several strings and functions like this for every algorithm
 
@@ -270,3 +270,26 @@ public class MinimalInterpreter2 {
         interpreter2.eval(python_);
     }
 }
+       public void eval_7(String python_7) {
+               String[] lines = python_7.split("\n"); // Split by lines
+
+               for (int i = 0; i < lines.length; i++) {
+                   String line = lines[i].trim();
+
+                   if (line.isEmpty()) continue;
+
+
+
+                   // Handle variable assignment and also check if it is not a logical not operation != and == too
+                   if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                       handleAssignment(line);
+                   } else if (line.startsWith("print")) {
+                       handlePrint(line); // this is for frinting when the line strarts with it
+                   } else if (line.contains("while")) {
+                       i = handleWhileLoop(lines, i);
+                   } else if(line.contains("if")){
+                       i = handleIfElse(lines,i);
+                   }
+
+               }
+           }
