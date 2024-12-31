@@ -262,7 +262,11 @@ public class MinimalInterpreter2 {
 
     public static void main(String[] args) {
         String python_ = """
-                // algorithm like fibonachi in python 
+                number = 5
+                result = 1
+                while number > 1:
+                    result *= number
+                    number -= 1
                 """;
                 //we will write a several strings and functions like this for every algorithm
 
