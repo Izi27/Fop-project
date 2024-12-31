@@ -9,8 +9,8 @@ public class MinimalInterpreter2 {
     private final Map<String, Double> numbervars = new HashMap<>(); // and this  for store numbers from python code
     
 
-    public void eval(String python_) {
-        String[] lines = python_.split("\n"); // Split by lines
+    public void eval_2(String python_2) {
+        String[] lines = python_2.split("\n"); // Split by lines
 
         for (int i = 0; i < lines.length; i++) {
             String line = lines[i].trim();
@@ -261,12 +261,19 @@ public class MinimalInterpreter2 {
     }
 
     public static void main(String[] args) {
-        String python_ = """
-                // algorithm like fibonachi in python 
+        
+        String python_2="""
+                n=10
+                sum=0
+                while n > 0:
+                    sum= sum+n
+                    n=n-1
                 """;
+                
                 //we will write a several strings and functions like this for every algorithm
 
         MinimalInterpreter2 interpreter2 = new MinimalInterpreter2();
-        interpreter2.eval(python_);
+        
+        interpreter2.eval_2(python_2);
+        
     }
-}
