@@ -32,6 +32,217 @@ public class MinimalInterpreter2 {
 
         }
     }
+    public void eval_1(String python_1) {
+        String[] lines = python_1.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+    public void eval_2(String python_2) {
+        String[] lines = python_2.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+    public void eval_3(String python_3) {
+        String[] lines = python_3.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+
+    public void eval_4(String python_4) {
+        String[] lines = python_4.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+    public void eval_5(String python_5) {
+        String[] lines = python_5.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+    public void eval_6(String python_6) {
+        String[] lines = python_6.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+
+    public void eval_7(String python_7) {
+        String[] lines = python_7.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+
+    public void eval_8(String python_8) {
+        String[] lines = python_8.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
+
+    public void eval_9(String python_9) {
+        String[] lines = python_9.split("\n"); // Split by lines
+
+        for (int i = 0; i < lines.length; i++) {
+            String line = lines[i].trim();
+
+            if (line.isEmpty()) continue; 
+
+
+
+            // Handle variable assignment and also check if it is not a logical not operation != and == too
+            if (line.contains("=") && (!line.contains("!") && !line.contains("==")&&!line.contains("<")&&!line.contains(">"))) {
+                handleAssignment(line);
+            } else if (line.startsWith("print")) {
+                handlePrint(line); // this is for frinting when the line strarts with it
+            } else if (line.contains("while")) {
+                i = handleWhileLoop(lines, i);
+            } else if(line.contains("if")){
+                i = handleIfElse(lines,i);
+            }
+
+        }
+    }
 
     private void handleAssignment(String line) {
         String[] parts = line.split("="); // there line splits variable assignment by = operator into variables
@@ -262,11 +473,123 @@ public class MinimalInterpreter2 {
 
     public static void main(String[] args) {
         String python_ = """
-                // algorithm like fibonachi in python 
+                number = 5
+                result = 1
+                while number > 1:
+                    result *= number
+                    number -= 1
                 """;
+        
+        String python_1="""
+                 n = 10  
+                a, b = 0, 1 
+                count = 0
+                
+                while count < n:
+                    a, b = b, a + b 
+                    count += 1
+                """;
+        String python_2="""
+                n=10
+                sum=0
+                while n > 0:
+                    sum= sum+n
+                    n=n-1
+                """;
+        String python_3="""
+                 n=5;
+                 i=1
+                 mult=1;
+                 while i<=10:
+                    mult=n*i
+                    i=i+1
+                    print(mult)
+
+                """;
+
+        String python_4="""
+            number = 1234  
+            sum = 0
+
+            while number > 0:
+                digit = number % 10 
+                sum += digit        
+                number //= 10 
+                """;
+        String python_5="""
+            number = 3947 
+            max = 0  
+            while number > 0:
+                i = number % 10 
+                if i > max:  
+                    max = i
+                number //= 10 
+                """;
+        String python_6="""
+                    n = 121  
+                i = n  
+                k = 0
+
+                while n > 0:
+                    i = n % 10  
+                    k = k * 10 
+                    n //= 10  
+
+                if i == k:
+                    print("True")  
+                else:
+                    print("False")  
+                """;
+        String python_7="""
+            n = 13  
+            is_prime = True  
+
+            if n <= 1:
+                is_prime = False
+            else:
+                for i in range(2, int(N**0.5) + 1):
+                    if n % i == 0:
+                        is_prime = False 
+                        break
+
+            print(is_prime)
+                """;
+        String python_8="""
+            n = 1234  # Example input
+            reversed_number = 0
+
+            while number > 0:
+                i = n % 10 
+                reversed_number = reversed_number * 10 + i 
+                n //= 10  
+
+            print(reversed_number)
+                """;
+        String python_9="""
+
+            a = 48  
+            b = 18  
+
+            
+            while b != 0:
+                a, b = b, a % b  
+
+            print(a)
+
+                """;
+                
                 //we will write a several strings and functions like this for every algorithm
 
         MinimalInterpreter2 interpreter2 = new MinimalInterpreter2();
         interpreter2.eval(python_);
+        interpreter2.eval_1(python_1);
+        interpreter2.eval_2(python_2);
+        interpreter2.eval_3(python_3);
+        interpreter2.eval_4(python_4);
+        interpreter2.eval_5(python_5);
+        interpreter2.eval_6(python_6);
+        interpreter2.eval_7(python_7);
+        interpreter2.eval_8(python_8);
+        interpreter2.eval_9(python_9);
+
     }
-}
